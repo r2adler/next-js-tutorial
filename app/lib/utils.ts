@@ -1,4 +1,4 @@
-import { Revenue } from 'app/lib/definitions';
+import {Revenue} from '@/app/lib/definitions';
 
 export const formatCurrency = (amount: number) => {
   return (amount / 100).toLocaleString('en-US', {
@@ -32,14 +32,14 @@ export const generateYAxis = (revenue: Revenue[]) => {
     yAxisLabels.push(`$${i / 1000}K`);
   }
 
-  return { yAxisLabels, topLabel };
+  return {yAxisLabels, topLabel};
 };
 
 export const generatePagination = (currentPage: number, totalPages: number) => {
   // If the total number of pages is 7 or less,
   // display all pages without any ellipsis.
   if (totalPages <= 7) {
-    return Array.from({ length: totalPages }, (_, i) => i + 1);
+    return Array.from({length: totalPages}, (_, i) => i + 1);
   }
 
   // If the current page is among the first 3 pages,
