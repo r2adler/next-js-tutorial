@@ -1,4 +1,4 @@
-import { sql } from '@vercel/postgres';
+import {sql} from '@vercel/postgres';
 import {
   CustomerField,
   CustomersTable,
@@ -7,8 +7,9 @@ import {
   LatestInvoiceRaw,
   User,
   Revenue,
-} from 'app/lib/definitions';
-import { formatCurrency } from 'app/lib/utils';
+} from '@/app/lib/definitions';
+import {formatCurrency} from '@/app/lib/utils';
+
 
 export async function fetchRevenue() {
   // Add noStore() here prevent the response from being cached.
@@ -88,6 +89,7 @@ export async function fetchCardData() {
 }
 
 const ITEMS_PER_PAGE = 6;
+
 export async function fetchFilteredInvoices(
   query: string,
   currentPage: number,
